@@ -315,7 +315,7 @@ const sidebar = [
     children: [
       {
         id: `7-1`,
-        title: "Rektorat",
+        title: "Tuzilma",
         path: "/tuzilma/rektorat",
         isPrivate: true,
         element: Rektorat,

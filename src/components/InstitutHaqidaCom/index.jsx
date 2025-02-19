@@ -102,7 +102,7 @@ const InstitutHaqidaCom = () => {
   return (
     <div className="max-w-[1600px] mx-auto">
       <h1 className="text-3xl font-medium text-gray-700 text-center my-5">
-        Institut haqida
+        Politexnikum haqida
       </h1>
       <div className="grid grid-cols-4">
         <div className="col-span-3 border p-5">

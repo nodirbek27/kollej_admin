@@ -105,7 +105,7 @@ function InstitutTuzilmasiCom() {
   return (
     <div className="max-w-[1600px] mx-auto">
       <h1 className="text-3xl font-medium text-gray-700 text-center my-5">
-        Institut tuzilmasi
+        Politexnikum tuzilmasi
       </h1>
       <div className="grid grid-cols-4">
         <div className="col-span-3 border p-5">
@@ -113,7 +113,7 @@ function InstitutTuzilmasiCom() {
             <form onSubmit={formik.handleSubmit}>
               <fieldset className="border px-5 mb-5">
                 <legend className="text-red-500 font-medium">
-                  Institut tuzilmasi
+                  Politexnikum tuzilmasi
                 </legend>
                 <div className="grid grid-cols-3 gap-2 my-5">
                   <MyTextInput

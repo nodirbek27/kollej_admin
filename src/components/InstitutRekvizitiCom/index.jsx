@@ -84,7 +84,7 @@ function InstitutRekvizitiCom() {
   return (
     <div className="max-w-[1600px] mx-auto">
       <h1 className="text-xl font-medium text-gray-700 text-center my-5">
-        Institut rekviziti
+      Politexnikum rekviziti
       </h1>
       <div>
         <div className="border p-5">
@@ -92,7 +92,7 @@ function InstitutRekvizitiCom() {
             <form onSubmit={formik.handleSubmit}>
               <fieldset className="border px-5 mb-5">
                 <legend className="text-red-500 font-medium">
-                  Institut rekviziti
+                Politexnikum rekviziti
                 </legend>
                 <div className="grid grid-cols-3 gap-2 my-5">
                   <MyTextInput
@@ -162,7 +162,7 @@ function InstitutRekvizitiCom() {
         <div className="col-span-1 border p-2">
           <div>
             <h4 className="text-md font-bold font-source text-center text-red-500">
-              Institut rekviziti
+            Politexnikum rekviziti
             </h4>
             <div>
               <div className="relative overflow-x-auto shadow-md sm:rounded-lg">

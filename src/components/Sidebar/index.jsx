@@ -53,7 +53,7 @@ export const Sidebar = () => {
   return (
     <Container>
       <Side>
-        <Logo onClick={onClickLogo}>KSPI admin panel</Logo>
+        <Logo onClick={onClickLogo}>UDP2 admin panel</Logo>
         <Menu>
           {sidebar.map((parent) => {
             const active = open.includes(parent.id);

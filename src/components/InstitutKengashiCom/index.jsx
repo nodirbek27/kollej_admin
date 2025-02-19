@@ -125,7 +125,7 @@ const InstitutKengashiCom = () => {
   return (
     <div className="App p-4">
       <h1 className="text-2xl font-bold mb-5 p-3 text-center">
-        Institut kengashi
+      Politexnikum kengashi
       </h1>
 
       <form

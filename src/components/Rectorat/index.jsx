@@ -294,12 +294,12 @@ const Rektorat = () => {
             </div>
             <div className="w-full p-[10px] -z-10">
                 <h1 className="text-center text-[1.8rem] font-medium mt-4">
-                    Rektorat
+                    Tuzilma
                 </h1>
                 <div className="w-full my-12">
                     <div>
                         <h1 className="text-[1.4rem] font-medium">
-                            Rektorat lavozim yaratish
+                            Tuzilma lavozim yaratish
                         </h1>
                         <form
                             className="flex items-center gap-2"
@@ -363,7 +363,7 @@ const Rektorat = () => {
                         <div className="collapse collapse-arrow">
                             <input type="checkbox" name="my-accordion-2" />
                             <div className="collapse-title text-xl font-medium bg-gray-200">
-                                Rektorat lavozimlari:
+                                Tuzilma lavozimlari:
                             </div>
                             <div className="collapse-content">
                                 {dataLavozim?.length !== 0 ? (
@@ -504,7 +504,7 @@ const Rektorat = () => {
 
                 <div className="my-10">
                     <h1 className="text-[1.4rem] font-medium mb-2">
-                        Rektorat lavozim nomzodini yaratish
+                        Tuzilma lavozim nomzodini yaratish
                     </h1>
                     <div className="flex flex-col gap-4">
                         <form
@@ -858,7 +858,7 @@ const Rektorat = () => {
                             <div className="collapse collapse-arrow">
                                 <input type="checkbox" name="my-accordion-2" />
                                 <div className="collapse-title text-xl font-medium bg-gray-200">
-                                    Rektorat rahbarlari:
+                                    Tuzilma rahbarlari:
                                 </div>
                                 <div className="collapse-content">
                                     <ol className="list-decimal flex flex-col gap-3 ps-4 my-4">
