@@ -1,6 +1,6 @@
 import axiosInstance from "./index";
 
-const ep = "talaba/magistr/";
+const ep = "home/carusel/";
 
 const get = () => axiosInstance.get(ep);
 
@@ -17,6 +17,6 @@ const del = (id) => {
   return axiosInstance.delete(`${ep}${id}/`);
 };
 
-const APITalabaMagistr = { get, getbyId, post, put, del };
+const APICarousel = { get, getbyId, post, put, del };
 
-export default APITalabaMagistr;
+export default APICarousel;

@@ -1,8 +1,7 @@
 import axios from "axios";
 
 const axiosInstance = axios.create({
-  baseURL: "https://kspiapi.kspi.uz/",
-  // baseURL: "https://kspi.pythonanywhere.com/",
+  baseURL: "https://api.udp2.uz/",
   headers: {
     "Content-Type": "multipart/form-data",
     Accept: "application/json",
@@ -36,7 +35,7 @@ axiosInstance.interceptors.response.use(
 const refreshToken = async () => {
   try {
     const refreshToken = localStorage.getItem("refreshToken");
-    const res = await axios.post("http://kspiapi.kspi.uz/refresh/", {
+    const res = await axios.post("https://api.udp2.uz/refresh/", {
       refresh: refreshToken,
     });
     const token = res.data.access;

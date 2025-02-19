@@ -11,16 +11,12 @@ import Elonlar from "../pages/ElonlarPage";
 import Login from "../components/Login";
 
 // HOME
-import AsosiyVideo from "../pages/Home/AsosiyVideo";
-import OchiqMalumot from "../pages/Home/OchiqMalumot";
-import InteraktivXizmatlar from "../pages/Home/InteraktivXizmatlar";
+import CarouselPage from "../pages/Home/CarouselPage";
 import Statistika from "../pages/Home/Statistika";
 import TalabaFikri from "../pages/Home/TalabaFikri";
-import UchtalikVideoPage from "../pages/Home/UchtalikVideoPage";
 import Galleriya from "../pages/Home/Galleriya";
 import Hamkorlar from "../pages/Home/Hamkorlar";
 import Boglanish from "../pages/Home/Boglanish";
-import ImtihonlarniKuzatish from "../pages/Home/ImtihonlarniKuzatish";
 
 // INSTITUT
 import InstitutKengashi from "../pages/Institut/InstitutKengashi";
@@ -37,7 +33,6 @@ import InstitutHujjatlar from "../pages/Institut/Hujjatlar/IIm-hh";
 import JamoatchilikKengashi from "../pages/Faoliyat/JamoatchilikKengashi";
 import MadaniyMarifiy from "../pages/Faoliyat/MadaniyMarifiy";
 import OquvUslubiy from "../pages/Faoliyat/OquvUslubiy";
-import AkademikLitsey from "../pages/Faoliyat/AkademikLitsey";
 import Ilmiy from "../pages/Faoliyat/Ilmiy";
 import Yoshlar from "../pages/Faoliyat/YoshlarFaoliyat";
 import XalqaroProfessorlarFikri from "../pages/Faoliyat/XalqaroFaoliyat/XorijiyProfessorlarFikri";
@@ -52,18 +47,12 @@ import Markazlar from "../pages/Tuzilma/Markazlar";
 
 // TALABALAR
 import Bakalavriat from "../pages/Talabalar/Bakalavriat";
-import Magistratura from "../pages/Talabalar/Magistratura";
-import TalabalarTurarJoyi from "../pages/Talabalar/TalabalarTurarJoyi";
 import BMalakaTalab from "../pages/Talabalar/BMalakaTalab"
-import MMalakaTalab from "../pages/Talabalar/MMalakaTalab"
 import BOquvReja from "../pages/Talabalar/BOquvReja"
-import MOquvReja from "../pages/Talabalar/MOquvReja"
 import BFanDasturlari from "../pages/Talabalar/BFanDasturlari"
-import MFanDasturlari from "../pages/Talabalar/MFanDasturlari";
 
 // ABITURIENT
 import AbiturientBakalavriat from "../pages/Abiturient/Bakalavriat";
-import AbiturientMagistratura from "../pages/Abiturient/Magistratura";
 import MeyoriyHuquqiyHujjatlar from "../pages/Abiturient/MeyoriyHuquqiyHujjatlar";
 import XorijiyTalabalarQabul from "../pages/Abiturient/XorijiyTalabalarQabul";
 import CallMarkaz from "../pages/Abiturient/CallMarkaz";
@@ -116,27 +105,11 @@ const sidebar = [
     role: ["admin"],
     children: [
       {
-        id: `4-0`,
-        title: "Ochiq ma'lumotlar",
-        path: "/home/ochiq-malumotlar",
-        isPrivate: true,
-        element: OchiqMalumot,
-        role: ["admin"],
-      },
-      {
         id: `4-1`,
-        title: "Asosiy video",
+        title: "Carousel",
         path: "/home/asosiy-video",
         isPrivate: true,
-        element: AsosiyVideo,
-        role: ["admin"],
-      },
-      {
-        id: `4-2`,
-        title: "Interaktiv xizmatlar",
-        path: "/home/interaktiv-xizmatlar",
-        isPrivate: true,
-        element: InteraktivXizmatlar,
+        element: CarouselPage,
         role: ["admin"],
       },
       {
@@ -153,14 +126,6 @@ const sidebar = [
         path: "/home/talaba-fikri",
         isPrivate: true,
         element: TalabaFikri,
-        role: ["admin"],
-      },
-      {
-        id: `4-5`,
-        title: "Uchtalik video",
-        path: "/home/uchtalik-video",
-        isPrivate: true,
-        element: UchtalikVideoPage,
         role: ["admin"],
       },
       {
@@ -187,19 +152,11 @@ const sidebar = [
         element: Boglanish,
         role: ["admin"],
       },
-      {
-        id: `4-9`,
-        title: "Imtihonlarni kuzatish",
-        path: "/home/imtihonlarni-kuzatish",
-        isPrivate: true,
-        element: ImtihonlarniKuzatish,
-        role: ["admin"],
-      },
     ],
   },
   {
     id: 5,
-    title: "Institut",
+    title: "Politexnikum",
     path: "/institut",
     icon: Analitika,
     isPrivate: true,
@@ -208,7 +165,7 @@ const sidebar = [
     children: [
       {
         id: `5-1`,
-        title: "Institut kengashi",
+        title: "Politexnikum kengashi",
         path: "/institut/institut-kengashi",
         isPrivate: true,
         element: InstitutKengashi,
@@ -216,7 +173,7 @@ const sidebar = [
       },
       {
         id: `5-2`,
-        title: "Institut haqida",
+        title: "Politexnikum haqida",
         path: "/institut/institut-haqida",
         isPrivate: true,
         element: InstitutHaqida,
@@ -224,7 +181,7 @@ const sidebar = [
       },
       {
         id: `5-3`,
-        title: "Institut tuzilmasi",
+        title: "Politexnikum tuzilmasi",
         path: "/institut/institut-tuzilmasi",
         isPrivate: true,
         element: InstitutTuzilmasi,
@@ -272,7 +229,7 @@ const sidebar = [
       },
       {
         id: `5-9`,
-        title: "Institut ichki me'yoriy-huquqiy hujjatlari",
+        title: "Politexnikum ichki me'yoriy-huquqiy hujjatlari",
         path: "/institut/ichki-me'yoriy-huquqiy-hujjatlar",
         isPrivate: true,
         element: InstitutHujjatlar,
@@ -311,14 +268,6 @@ const sidebar = [
         path: "/faoliyat/oquv-uslubiy-faoliyat",
         isPrivate: true,
         element: OquvUslubiy,
-        role: ["admin"],
-      },
-      {
-        id: `6-4`,
-        title: "Akademik litsey",
-        path: "/faoliyat/akademik-litsey",
-        isPrivate: true,
-        element: AkademikLitsey,
         role: ["admin"],
       },
       {
@@ -424,35 +373,11 @@ const sidebar = [
         role: ["admin"],
       },
       {
-        id: `8-2`,
-        title: "Magistratura",
-        path: "/talabalar/magistratura",
-        isPrivate: true,
-        element: Magistratura,
-        role: ["admin"],
-      },
-      {
-        id: `8-3`,
-        title: "Talabalar turar joyi",
-        path: "/talabalar/talabalar-turar-joyi",
-        isPrivate: true,
-        element: TalabalarTurarJoyi,
-        role: ["admin"],
-      },
-      {
         id: `8-4`,
         title: "Bakalavr malaka talablari",
         path: "/talabalar/bakalavr-malaka-talab",
         isPrivate: true,
         element: BMalakaTalab,
-        role: ["admin"],
-      },
-      {
-        id: `8-5`,
-        title: "Magist malaka talablari",
-        path: "/talabalar/magist-malaka-talab",
-        isPrivate: true,
-        element: MMalakaTalab,
         role: ["admin"],
       },
       {
@@ -464,27 +389,11 @@ const sidebar = [
         role: ["admin"],
       },
       {
-        id: `8-7`,
-        title: "Magistr o'quv rejasi",
-        path: "/talabalar/magistr-oquv-rejasi",
-        isPrivate: true,
-        element: MOquvReja,
-        role: ["admin"],
-      },
-      {
         id: `8-8`,
         title: "Bakalavr fan dasturlari",
         path: "/talabalar/bakalavr-fan-dasturlari",
         isPrivate: true,
         element: BFanDasturlari,
-        role: ["admin"],
-      },
-      {
-        id: `8-9`,
-        title: "Magistr fan dasturlari",
-        path: "/talabalar/magistr-fan-dasturlari",
-        isPrivate: true,
-        element: MFanDasturlari,
         role: ["admin"],
       },
     ],
@@ -504,14 +413,6 @@ const sidebar = [
         path: "/abiturient/abiturient-bakalavriat",
         isPrivate: true,
         element: AbiturientBakalavriat,
-        role: ["admin"],
-      },
-      {
-        id: `9-2`,
-        title: "Magistratura",
-        path: "/abiturient/abiturient-magistratura",
-        isPrivate: true,
-        element: AbiturientMagistratura,
         role: ["admin"],
       },
       {
