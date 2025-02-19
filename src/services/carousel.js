@@ -13,10 +13,13 @@ const post = (item) => {
 const put = (id, item) => {
   return axiosInstance.put(`${ep}${id}/`, item);
 };
+const patch = (id, item) => {
+  return axiosInstance.patch(`${ep}${id}/`, item);
+};
 const del = (id) => {
   return axiosInstance.delete(`${ep}${id}/`);
 };
 
-const APICarousel = { get, getbyId, post, put, del };
+const APICarousel = { get, getbyId, post, put, patch, del };
 
 export default APICarousel;

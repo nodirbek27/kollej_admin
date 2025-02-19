@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import APICarousel from "../../services/carousel";
+import { MdDeleteForever } from "react-icons/md";
+import { MdOutlineEdit } from "react-icons/md";
 
 const Carousel = () => {
   const [formData, setFormData] = useState({
@@ -14,6 +16,7 @@ const Carousel = () => {
   const [content, setContent] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
+  const [editingId, setEditingId] = useState(null); // Tahrirlanayotgan element IDsi
 
   const handleChange = (e) => {
     const { name, value, type, files } = e.target;
@@ -33,8 +36,12 @@ const Carousel = () => {
     if (file) formDataToSend.append("rasm", file);
 
     try {
-      await APICarousel.post(formDataToSend);
-      alert("Data successfully posted!");
+      if (editingId) {
+        await APICarousel.patch(editingId, formDataToSend);
+      } else {
+        await APICarousel.post(formDataToSend);
+      }
+      alert("Ma'lumot saqlandi!");
       setFormData({
         title_uz: "",
         title_ru: "",
@@ -44,9 +51,10 @@ const Carousel = () => {
         body_en: "",
       });
       setFile(null);
+      setEditingId(null); // Tahrirlashni bekor qilish
       getData();
     } catch (err) {
-      console.error("Error posting data:", err);
+      console.error("Xatolik yuz berdi:", err);
     }
   };
 
@@ -57,9 +65,31 @@ const Carousel = () => {
       setContent(data);
       setError(null);
     } catch (err) {
-      setError("Failed to load data");
+      setError("Ma'lumotlarni yuklashda xatolik");
     } finally {
       setLoading(false);
+    }
+  };
+
+  const handleEdit = (item) => {
+    setEditingId(item.id);
+    setFormData({
+      title_uz: item.title_uz,
+      title_ru: item.title_ru,
+      title_en: item.title_en,
+      body_uz: item.body_uz,
+      body_ru: item.body_ru,
+      body_en: item.body_en,
+    });
+    setFile(null);
+  };
+
+  const handleDelete = async (id) => {
+    try {
+      await APICarousel.del(id);
+      getData();
+    } catch (error) {
+      console.error("Xatolik:", error);
     }
   };
 
@@ -134,7 +164,7 @@ const Carousel = () => {
             htmlFor="body_uz"
           >
             <h3>
-              Sarlavha <span className="text-red-500">uz</span>
+              Batafsil <span className="text-red-500">uz</span>
             </h3>
             <input
               type="text"
@@ -151,7 +181,7 @@ const Carousel = () => {
             htmlFor="body_ru"
           >
             <h3>
-              Sarlavha <span className="text-red-500">ru</span>
+              Batafsil <span className="text-red-500">ru</span>
             </h3>
             <input
               type="text"
@@ -168,7 +198,7 @@ const Carousel = () => {
             htmlFor="body_en"
           >
             <h3>
-              Sarlavha <span className="text-red-500">en</span>
+              Batafsil <span className="text-red-500">en</span>
             </h3>
             <input
               type="text"
@@ -201,24 +231,24 @@ const Carousel = () => {
             />
           </label>
         </div>
-
         <button
           type="submit"
           className="w-full bg-blue-400 hover:bg-blue-500 flex justify-center items-center gap-1 h-[48px] text-white mt-[18px] font-bold rounded-lg active:scale-95 "
         >
-          Saqlash
+          {editingId ? "Tahrirlash" : "Saqlash"}
         </button>
       </form>
 
       {loading && <p>Loading...</p>}
       {error && <p className="text-red-500">{error}</p>}
 
-      <table className="w-full border-collapse border border-gray-300">
+      <table className="w-full border-collapse border border-gray-300 mt-8 mb-5">
         <thead>
           <tr className="bg-gray-200">
             <th className="border border-gray-300 p-2">Rasm</th>
             <th className="border border-gray-300 p-2">Sarlavha</th>
             <th className="border border-gray-300 p-2">Batafsil</th>
+            <th className="border border-gray-300 p-2">Tahrirlash/O'chirish</th>
           </tr>
         </thead>
         <tbody>
@@ -252,6 +282,24 @@ const Carousel = () => {
                 <p>
                   <strong>EN:</strong> {item?.body_en}
                 </p>
+              </td>
+              <td className="flex justify-center mt-5">
+                <div className="flex justify-center items-center gap-3">
+                  <button
+                    type="button"
+                    className="bg-green-500 hover:bg-green-600 flex justify-center items-center p-2 text-white font-bold rounded "
+                    onClick={() => handleEdit(item)}
+                  >
+                    <MdOutlineEdit size={20} />
+                  </button>
+                  <button
+                    type="button"
+                    className="bg-red-500 hover:bg-red-600 flex justify-center items-center p-2 text-white font-bold rounded "
+                    onClick={() => handleDelete(item.id)}
+                  >
+                    <MdDeleteForever size={20} />
+                  </button>
+                </div>
               </td>
             </tr>
           ))}
