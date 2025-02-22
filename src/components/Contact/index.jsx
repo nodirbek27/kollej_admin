@@ -27,7 +27,6 @@ const Contact = () => {
       manzil_en: "",
       telefon: "",
       email_1: "",
-      email_2: "",
     },
     onSubmit: async (values) => {
       if (
@@ -35,8 +34,7 @@ const Contact = () => {
         values.manzil_ru === "" ||
         values.manzil_en === "" ||
         values.telefon === "" ||
-        values.email_1 === "" ||
-        values.email_2 === ""
+        values.email_1 === "" 
       ) {
         setErrTxt(true);
         setTimeout(() => {
@@ -121,15 +119,6 @@ const Contact = () => {
                 onChange={formik.handleChange}
               />
             </label>
-            <label htmlFor="email_2">
-              <h3>Email-2</h3>
-              <textarea
-                className="w-full input input-bordered"
-                id="email_2"
-                value={formik.values.email_2}
-                onChange={formik.handleChange}
-              />
-            </label>
           </div>
           <TextWarn
             className={`${
@@ -194,10 +183,6 @@ const Contact = () => {
                 <tr>
                   <th>Email</th>
                   <td colSpan={3}>{item.email_1}</td>
-                </tr>
-                <tr>
-                  <th>Email-2</th>
-                  <td colSpan={3}>{item.email_2}</td>
                 </tr>
               </tbody>
             ))}
